@@ -12,6 +12,8 @@ vim.cmd('color zellner')
 
 vim.opt.number = true
 vim.opt.wrap = true
+vim.opt.breakindent = true
+vim.opt.showbreak = '    '
 vim.opt.eol = true -- End text files with a newline
 
 vim.opt.expandtab = true
