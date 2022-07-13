@@ -2,7 +2,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
     local Plug = vim.fn['plug#']
     Plug('preservim/nerdtree')
     Plug('neoclide/coc.nvim', {branch = 'release' })
-    Plug 'cormacrelf/vim-colors-github'
+    Plug('airblade/vim-gitgutter')
 vim.call('plug#end')
 
 vim.g.mapleader = ','
