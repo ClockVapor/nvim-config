@@ -9,6 +9,10 @@ vim.g.mapleader = ','
 -- Leader-f to toggle file tree panel
 vim.api.nvim_set_keymap('n', '<Leader>f', ':<C-u>NERDTreeToggle<CR>', { noremap = true, silent = true })
 
+-- Tab traversal
+vim.api.nvim_set_keymap('n', '<Leader>]', ':tabnext<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>[', ':tabprevious<cr>', { noremap = true, silent = true })
+
 -- Control-space to initialize coc autocomplete
 vim.api.nvim_set_keymap('i', '<c-space>', 'coc#refresh()', { noremap = true, silent = true, expr = true })
 -- Tab to scroll down in coc autocomplete list
