@@ -3,6 +3,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
     Plug('preservim/nerdtree')
     Plug('neoclide/coc.nvim', {branch = 'release' })
     Plug('airblade/vim-gitgutter')
+    Plug('udalov/kotlin-vim')
 vim.call('plug#end')
 
 vim.g.mapleader = ','
