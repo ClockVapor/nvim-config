@@ -24,6 +24,8 @@ vim.api.nvim_set_keymap('n', '<Leader>d', '<plug>(coc-definition)', { noremap = 
 vim.api.nvim_set_keymap('n', '<Leader>r', '<plug>(coc-references)', { noremap = true, silent = true })
 -- Modifying <cr> to confirm autocomplete entry (including other edits like automatically adding imports)
 vim.api.nvim_set_keymap('i', '<cr>', 'pumvisible() ? "<C-y>" : "<C-g>u<cr>"', { noremap = true, silent = true, expr = true })
+-- Leader-qf to quick fix current error
+vim.api.nvim_set_keymap('n', '<Leader>qf', '<plug>(coc-fix-current)', { noremap = true, silent = true })
 
 vim.cmd('color zellner')
 
