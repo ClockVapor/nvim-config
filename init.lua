@@ -8,6 +8,13 @@ vim.call('plug#end')
 vim.g.mapleader = ','
 vim.api.nvim_set_keymap('n', '<Leader>l', ':<C-u>NERDTreeToggle<CR>', { noremap = true, silent = true })
 
+-- Control-space to initialize coc autocomplete
+vim.api.nvim_set_keymap('i', '<c-space>', 'coc#refresh()', { noremap = true, silent = true, expr = true })
+-- Tab to scroll down in coc autocomplete list
+vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "<C-n>" : "<Tab>"', { noremap = true, silent = true, expr = true })
+-- Shift-tab to scroll up in coc autocomplete list
+vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', { noremap = true, silent = true, expr = true })
+
 vim.cmd('color zellner')
 
 vim.opt.number = true
