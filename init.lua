@@ -1,18 +1,19 @@
 vim.call('plug#begin', '~/.config/nvim/plugged')
     local Plug = vim.fn['plug#']
     Plug('preservim/nerdtree')
-    Plug('neoclide/coc.nvim', {branch = 'release' })
     Plug('airblade/vim-gitgutter')
+    Plug('junegunn/fzf')
+    Plug('junegunn/fzf.vim')
+    Plug('neoclide/coc.nvim', { branch = 'release' })
     Plug('udalov/kotlin-vim')
 vim.call('plug#end')
 
 vim.g.mapleader = ','
--- Leader-f to toggle file tree panel
+
 vim.api.nvim_set_keymap('n', '<Leader>f', ':<C-u>NERDTreeToggle<CR>', { noremap = true, silent = true })
 
--- Tab traversal
-vim.api.nvim_set_keymap('n', '<Leader>]', ':tabnext<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>[', ':tabprevious<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>]', ':<C-u>tabnext<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>[', ':<C-u>tabprevious<cr>', { noremap = true, silent = true })
 
 -- Control-space to initialize coc autocomplete
 vim.api.nvim_set_keymap('i', '<c-space>', 'coc#refresh()', { noremap = true, silent = true, expr = true })
