@@ -4,6 +4,8 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
     Plug('airblade/vim-gitgutter')
     Plug('junegunn/fzf')
     Plug('junegunn/fzf.vim')
+    Plug('itchyny/lightline.vim')
+    Plug('NLKNguyen/papercolor-theme')
     Plug('neoclide/coc.nvim', { branch = 'release' })
     Plug('udalov/kotlin-vim')
 vim.call('plug#end')
@@ -33,7 +35,9 @@ vim.api.nvim_set_keymap('i', '<cr>', 'pumvisible() ? "<C-y>" : "<C-g>u<cr>"', { 
 -- Leader-qf to quick fix current error
 vim.api.nvim_set_keymap('n', '<Leader>qf', '<plug>(coc-fix-current)', { noremap = true, silent = true })
 
-vim.cmd('color zellner')
+vim.cmd('set background=light')
+vim.cmd('color PaperColor')
+vim.cmd('let g:lightline = { \'colorscheme\': \'PaperColor\' }')
 
 vim.opt.number = true
 vim.opt.wrap = true
