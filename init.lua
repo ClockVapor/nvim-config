@@ -38,6 +38,7 @@ vim.api.nvim_set_keymap('n', '<Leader>qf', '<plug>(coc-fix-current)', { noremap 
 vim.cmd('set background=light')
 vim.cmd('color PaperColor')
 vim.cmd('let g:lightline = { \'colorscheme\': \'PaperColor\' }')
+vim.cmd('set noshowmode')
 
 vim.opt.number = true
 vim.opt.wrap = true
