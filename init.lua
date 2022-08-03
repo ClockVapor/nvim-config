@@ -8,6 +8,8 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
     Plug('NLKNguyen/papercolor-theme')
     Plug('neoclide/coc.nvim', { branch = 'release' })
     Plug('udalov/kotlin-vim')
+    Plug('OmniSharp/omnisharp-vim')
+    Plug('tpope/vim-fugitive')
 vim.call('plug#end')
 
 vim.g.mapleader = ','
@@ -20,9 +22,9 @@ vim.api.nvim_set_keymap('n', '<Leader>[', ':<C-u>tabprevious<cr>', { noremap = t
 -- Control-space to initialize coc autocomplete
 vim.api.nvim_set_keymap('i', '<c-space>', 'coc#refresh()', { noremap = true, silent = true, expr = true })
 -- Tab to scroll down in coc autocomplete list
-vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "<C-n>" : "<Tab>"', { noremap = true, silent = true, expr = true })
+vim.api.nvim_set_keymap('i', '<Tab>', 'coc#pum#visible() ? coc#pum#next(1) : "<Tab>"', { noremap = true, silent = true, expr = true })
 -- Shift-tab to scroll up in coc autocomplete list
-vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "<C-p>" : "<S-Tab>"', { noremap = true, silent = true, expr = true })
+vim.api.nvim_set_keymap('i', '<S-Tab>', 'coc#pum#visible() ? coc#pum#prev(1) : "<S-Tab>"', { noremap = true, silent = true, expr = true })
 -- Navigate to next/previous error/warning
 vim.api.nvim_set_keymap('n', '<Leader>j', '<plug>(coc-diagnostic-next)', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>k', '<plug>(coc-diagnostic-prev)', { noremap = true, silent = true })
@@ -31,7 +33,7 @@ vim.api.nvim_set_keymap('n', '<Leader>d', '<plug>(coc-definition)', { noremap = 
 -- Leader-r to list symbol references
 vim.api.nvim_set_keymap('n', '<Leader>r', '<plug>(coc-references)', { noremap = true, silent = true })
 -- Modifying <cr> to confirm autocomplete entry (including other edits like automatically adding imports)
-vim.api.nvim_set_keymap('i', '<cr>', 'pumvisible() ? "<C-y>" : "<C-g>u<cr>"', { noremap = true, silent = true, expr = true })
+vim.api.nvim_set_keymap('i', '<cr>', 'coc#pum#visible() ? coc#_select_confirm() : "<cr>"', { noremap = true, silent = true, expr = true })
 -- Leader-qf to quick fix current error
 vim.api.nvim_set_keymap('n', '<Leader>qf', '<plug>(coc-fix-current)', { noremap = true, silent = true })
 
