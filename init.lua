@@ -36,6 +36,8 @@ vim.api.nvim_set_keymap('n', '<Leader>r', '<plug>(coc-references)', { noremap = 
 vim.api.nvim_set_keymap('i', '<cr>', 'coc#pum#visible() ? coc#_select_confirm() : "<cr>"', { noremap = true, silent = true, expr = true })
 -- Leader-qf to quick fix current error
 vim.api.nvim_set_keymap('n', '<Leader>qf', '<plug>(coc-fix-current)', { noremap = true, silent = true })
+-- Leader-s to rename symbol at cursor
+vim.api.nvim_set_keymap('n', '<Leader>s', '<plug>(coc-rename)', { noremap = true, silent = true })
 
 vim.cmd('set background=light')
 vim.cmd('color PaperColor')
