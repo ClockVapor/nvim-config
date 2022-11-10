@@ -35,9 +35,11 @@ vim.api.nvim_set_keymap('n', '<Leader>r', '<plug>(coc-references)', { noremap = 
 -- Modifying <cr> to confirm autocomplete entry (including other edits like automatically adding imports)
 vim.api.nvim_set_keymap('i', '<cr>', 'coc#pum#visible() ? coc#_select_confirm() : "<cr>"', { noremap = true, silent = true, expr = true })
 -- Leader-qf to quick fix current error
-vim.api.nvim_set_keymap('n', '<Leader>qf', '<plug>(coc-fix-current)', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>qf', '<plug>(coc-codeaction-cursor)', { noremap = true, silent = true })
 -- Leader-s to rename symbol at cursor
 vim.api.nvim_set_keymap('n', '<Leader>s', '<plug>(coc-rename)', { noremap = true, silent = true })
+-- Leader-cf to navigate to current buffer's file in NERDTree
+vim.api.nvim_set_keymap('n', '<Leader>cf', ':NERDTreeFind<cr>', { noremap = true, silent = true })
 
 vim.cmd('set background=light')
 vim.cmd('color PaperColor')
